@@ -1,0 +1,12 @@
+[Defines]
+  DEC_SPECIFICATION   = 1.25
+  PACKAGE_NAME                   = SDL2MixerLib
+  PACKAGE_GUID                   = 057e5941-7c58-4aef-8ba4-60240f16dfa8
+  PACKAGE_VERSION                = 2.8.2
+
+[Includes]
+  include/
+
+
+[LibraryClasses]
+  ##TODO
