@@ -7,14 +7,29 @@
   LIBRARY_CLASS = LibSDL2Mixer|UEFI_APPLICATION 
 
 [Sources]
+  src/codecs/load_aiff.c
+  src/codecs/load_voc.c
+  src/codecs/mp3utils.c
+  src/codecs/music_cmd.c
+  src/codecs/music_drflac.c
+  src/codecs/music_minimp3.c
+  src/codecs/music_wav.c
+  src/effect_position.c
+  src/effect_stereoreverse.c
+  src/effects_internal.c
   src/mixer.c
+  src/music.c
+  src/utils.c
+
 
 [Packages]
   MdePkg/MdePkg.dec
+  LibraryPkg/SDL2Pkg/SDL2Pkg.dec
 
 [LibraryClasses]
   UefiLib
   LibC
+  LibSDL2
 
 [BuildOptions]
   *_*_*_CC_FLAGS  = -std=c11
@@ -27,8 +42,11 @@
   *_*_*_CC_FLAGS = -pthread
   *_*_*_CC_FLAGS = -I$(MODULE_DIR)/include
   *_*_*_CC_FLAGS = -I$(MODULE_DIR)/src
+  *_*_*_CC_FLAGS = -I$(MODULE_DIR)/src/codecs
 
+  *_*_*_CC_FLAGS = "-DMUSIC_WAV" "-DMUSIC_MP3_MINIMP3"
   *_*_*_CC_FLAGS = -I$(WORKSPACE)/StdLib/Include
+  *_*_*_CC_FLAGS = -Wno-unused-variable
 
 [BuildOptions.X64]
   *_*_*_CC_FLAGS = -I$(WORKSPACE)/StdLib/Include/X64
