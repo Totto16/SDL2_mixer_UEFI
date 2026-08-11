@@ -24,11 +24,27 @@
 
 [Packages]
   MdePkg/MdePkg.dec
+  StdLib/StdLib.dec
   LibraryPkg/SDL2Pkg/SDL2Pkg.dec
 
 [LibraryClasses]
+[LibraryClasses]
+# MdePkg
   UefiLib
+# StdLib
   LibC
+  LibCType
+  LibLocale
+  LibMath
+  LibSignal
+  LibStdio
+  LibStdLib
+  LibString
+  LibTime
+  LibUefi
+  LibWchar
+  LibGdtoa
+# SDL2Pkg
   LibSDL2
 
 [BuildOptions]
