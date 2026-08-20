@@ -26,6 +26,7 @@
 
 #define MINIMP3_IMPLEMENTATION
 #define MINIMP3_NO_STDIO
+#define MINIMP3_NO_SIMD
 #include "minimp3/minimp3_ex.h"
 
 
